@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --light-cyan: hsl(179, 47%, 52%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
 *,
 *:before,
 *:after {
@@ -10,11 +20,6 @@
   font: inherit;
 }
 
-body {
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
 img,
 picture,
 svg,
@@ -23,3 +28,102 @@ video {
   max-width: 100%;
 }
 
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: var(--light-gray);
+  font-family: "Karla", sans-serif;
+  padding: 0 10%;
+}
+
+.price-component {
+  display: grid;
+  grid-template-areas: "description" "subscription" "features";
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
+}
+
+.price-component__section {
+  --spacer: 1em;
+  padding: 2em 1.5em;
+
+  & h2 {
+    margin-bottom: var(--spacer);
+  }
+}
+
+.price-component__title {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.price-component__description {
+  grid-area: description;
+  background-color: white;
+  color: var(--cyan);
+
+
+  & h3 {
+    font-weight: 700;
+    color: var(--bright-yellow);
+    margin-bottom: var(--spacer);
+  }
+
+  & p {
+    color: var(--grayish-blue);
+    line-height: 1.6;
+  }
+}
+
+.price-component__subscription {
+  grid-area: subscription;
+  background-color: var(--cyan);
+  color: white;
+
+  & p {
+    margin-bottom: var(--spacer);
+  }
+
+  & p:nth-of-type(1) {
+    color: var(--light-gray);
+  }
+
+  & strong {
+    color: white;
+    font-size: 2em;
+    vertical-align: middle;
+  }
+}
+
+.btn-cta {
+  width: 100%;
+  height: 3em;
+  margin-top: var(--spacer);
+  color: white;
+  background-color: var(--bright-yellow);
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.price-component__features {
+  grid-area: features;
+  background-color: var(--light-cyan);
+  color: white;
+  list-style: none;
+
+  & li {
+    color: var(--light-gray);
+    margin: 0.5em 0;
+  }
+}
+
+
+@media (min-width: 37.5rem) {
+  .price-component {
+    grid-template-areas: "description description" "subscription features"
+  }
+}

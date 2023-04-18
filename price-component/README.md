@@ -30,8 +30,8 @@ npm run build # bundle the application using RollUp
 
 ## Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://your-solution-url.com)
+- Live Site URL: [Live site URL](https://clinquant-cocada-0ea08d.netlify.app)
 
 ## Built with
 
@@ -44,5 +44,5 @@ npm run build # bundle the application using RollUp
 
 Seung Woo (Paul) Ji
 
-- [LinkedIn]()
+- [LinkedIn](https://www.linkedin.com/in/seung-woo-paul-ji-8b697a193/)
 - [Frontend Mentor](https://www.frontendmentor.io/profile/seungwoo-ji)

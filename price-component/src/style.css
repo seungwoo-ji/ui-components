@@ -122,9 +122,16 @@ body {
   border: none;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: filter ease 0.5s;
+
+  &:hover, &:focus {
+    filter: brightness(80%);
+  }
+
+  &:active {
+    filter: brightness(60%);
+  }
 }
-
-
 
 .price-component__features {
   grid-area: features;

@@ -4,9 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="shortcut icon"
+      href="./public/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Interactive Pricing Component</title>
   </head>
   <body>
+    <img
+      class="bg-image"
+      src="./public/bg-pattern.svg"
+      alt="curved pattern background image"
+      aria-hidden="true"
+    />
+    <main>
+      <header class="header">
+        <h1 class="visually-hidden">Interactive Pricing Component</h1>
+        <h2>Simple, traffic-based pricing</h2>
+        <p>Sign-up for our 30-day trial.</p>
+        <p>No credit card required.</p>
+      </header>
+      <form class="pricing-card" action="#">
+        <span class="pricing-card__views uppercase">100k Pageviews</span>
+        <label class="visually-hidden" for="range">Number of Pages</label>
+        <input
+          class="pricing-card__range"
+          type="range"
+          id="range"
+          min="1"
+          max="5"
+          value="3"
+        />
+        <div class="pricing-card__price-wrapper">
+          <span class="pricing-card__price">$16.00</span
+          ><span class="pricing-card__time"> / month</span>
+        </div>
+        <label for="checkbox">Monthly Billing</label>
+        <input class="pricing-card__frequency" type="checkbox" id="checkbox" />
+        <label for="checkbox"> Yearly Billing </label>
+        <ul class="pricing-card__features">
+          <li class="pricing-card__feature">Unlimited websites</li>
+          <li class="pricing-card__feature">100% data ownership</li>
+          <li class="pricing-card__feature">Email reports</li>
+        </ul>
+        <button class="pricing-card__btn" type="button">Start my trial</button>
+      </form>
+    </main>
     <script src="./src/index.js" type="module"></script>
   </body>
 </html>

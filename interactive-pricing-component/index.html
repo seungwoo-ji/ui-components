@@ -4,26 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./public/favicon-32x32.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="/favicon-32x32.png" type="image/x-icon" />
     <title>Interactive Pricing Component</title>
   </head>
   <body>
     <img
       class="bg-image"
-      src="./public/bg-pattern.svg"
+      src="/bg-pattern.svg"
       alt="curved pattern background image"
       aria-hidden="true"
     />
-    <main>
+    <main class="container">
       <header class="header">
         <h1 class="visually-hidden">Interactive Pricing Component</h1>
         <h2>Simple, traffic-based pricing</h2>
-        <p>Sign-up for our 30-day trial.</p>
-        <p>No credit card required.</p>
+        <div class="text-wrapper">
+          <p>Sign-up for our 30-day trial.</p>
+          <p>No credit card required.</p>
+        </div>
       </header>
       <form class="pricing-card" action="#">
         <span class="pricing-card__views uppercase">100k Pageviews</span>

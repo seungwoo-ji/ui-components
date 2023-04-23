@@ -38,9 +38,18 @@
           <span class="pricing-card__price">$16.00</span
           ><span class="pricing-card__time"> / month</span>
         </div>
-        <label for="checkbox">Monthly Billing</label>
-        <input class="pricing-card__frequency" type="checkbox" id="checkbox" />
-        <label for="checkbox"> Yearly Billing </label>
+        <div class="pricing-card__billing-wrapper">
+          <label for="checkbox">Monthly Billing</label>
+          <input
+            class="pricing-card__frequency"
+            type="checkbox"
+            id="checkbox"
+          />
+          <label for="checkbox"> Yearly Billing </label>
+          <span role="status" aria-label="25 percent off for yearly billing"
+            >25%</span
+          >
+        </div>
         <ul class="pricing-card__features">
           <li class="pricing-card__feature">Unlimited websites</li>
           <li class="pricing-card__feature">100% data ownership</li>

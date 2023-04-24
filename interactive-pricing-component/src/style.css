@@ -35,9 +35,155 @@ video {
   --light-grayish-blue-for-bg: hsl(223, 50%, 87%);
   --grayish-blue: hsl(225, 20%, 60%);
   --dark-desaturated-blue: hsl(227, 35%, 25%);
+
+  --spacer: 1em;
 }
 
 body {
+  display: grid;
+  place-items: center;
   min-height: 100vh;
   min-height: 100svh;
+  background-color: var(--very-pale-blue);
+  font-family: 'Manrope', sans-serif;
+  padding: 1.5em
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+  object-position: left;
+  z-index: -10;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1em;
+
+  &:before {
+    content: '';
+    width: 146px;
+    height: 145px;
+    position: absolute;
+    z-index: -10;
+    background: url(/pattern-circles.svg) no-repeat center;
+  }
+
+  & h2 {
+    color: var(--dark-desaturated-blue);
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  & p {
+    color: var(--grayish-blue);
+    font-size: 0.8125rem;
+    padding: 0.25em 0;
+  }
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.pricing-card {
+  display: grid;
+  gap: 2.5em;
+  place-items: center;
+  border-radius: 10px;
+  background-color: var(--white);
+  padding: 2em 0;
+  width: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: var(--grayish-blue);
+  font-size: 0.75rem;
+}
+
+.pricing-card__views {
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.pricing-card__price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.pricing-card__price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark-desaturated-blue);
+}
+
+.pricing-card__time {
+  font-size: 0.875rem;
+}
+
+.pricing-card__features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  border-top: 1px solid var(--light-grayish-blue-for-bar);
+  padding-top: 2.5em; 
+}
+
+.pricing-card__feature {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  &:before {
+    content: '';
+    background: url(/icon-check.svg) no-repeat center;
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.pricing-card__btn {
+  background-color: var(--dark-desaturated-blue);
+  color: var(--pale-blue);
+  border: none;
+  border-radius: 100vmax; /* border-radius hack for pill-shaped button https://www.youtube.com/watch?v=MywezIxlp8Y */
+  padding: 1em 4.5em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }

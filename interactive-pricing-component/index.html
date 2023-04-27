@@ -39,16 +39,21 @@
           ><span class="pricing-card__time"> / month</span>
         </div>
         <div class="pricing-card__billing-wrapper">
-          <label for="checkbox">Monthly Billing</label>
-          <input
-            class="pricing-card__frequency"
-            type="checkbox"
-            id="checkbox"
-          />
-          <label for="checkbox"> Yearly Billing </label>
-          <span role="status" aria-label="25 percent off for yearly billing"
-            >25%</span
-          >
+          <label class="toggle__label" for="toggle"
+            >Monthly Billing
+            <input type="checkbox" id="toggle" class="toggle__input" />
+            <!-- hidden by default in case CSS is not available to allow default checkbox  -->
+            <span class="toggle__display" hidden></span>
+          </label>
+          <p>
+            Yearly Billing
+            <span
+              class="badge"
+              role="status"
+              aria-label="25 percent off for yearly billing"
+              >&minus;25%</span
+            >
+          </p>
         </div>
         <div class="pricing-card__features" role="list">
           <p class="pricing-card__feature" role="listitem">

@@ -62,6 +62,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5em;
   width: 100%;
 }
@@ -113,6 +115,7 @@ body {
   background-color: var(--white);
   padding: 2em 0;
   width: 100%;
+  max-width: 50em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   color: var(--grayish-blue);
   font-size: 0.75rem;
@@ -122,6 +125,65 @@ body {
   font-weight: 800;
   letter-spacing: 0.2em;
 }
+
+/* how to customize input range element
+   https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/#comments-create-custom-range-input-consistent-browsers */
+input[type='range'] {
+  --bar-color: var(--soft-cyan);
+  --bar-size: 0.6em;
+  --thumb-color: var(--strong-cyan);
+  --thumb-size: 3em;
+  --thumb-color-hover: hsl(174, 86%, 36%);
+
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 80%;
+
+  &::-webkit-slider-runnable-track {
+    background-color: var(--bar-color);
+    height: var(--bar-size);
+    border-radius: 100vmax;
+  }
+
+  &::-moz-range-track {
+    background-color: var(--bar-color);
+    height: var(--bar-size);
+    border-radius: 100vmax;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    background: url(/icon-slider.svg) center no-repeat, var(--thumb-color);
+    margin-top: calc(var(--bar-size) / 2 - var(--thumb-size) / 2);
+    height: var(--thumb-size);
+    width: var(--thumb-size);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px var(--strong-cyan);
+    transition: all 250ms;
+  }
+
+  &::-moz-range-thumb {
+    border: 0;
+    background: url(/icon-slider.svg) center no-repeat, var(--thumb-color);
+    height: var(--thumb-size);
+    width: var(--thumb-size);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px var(--strong-cyan);
+    transition: all 250ms;
+  }
+
+  &:hover::-webkit-slider-thumb {
+    background-color: var(--thumb-color-hover);
+    box-shadow: 0 10px 30px var(--thumb-color-hover);
+  }
+
+  &:hover::-moz-range-thumb {
+    background-color: var(--thumb-color-hover);
+    box-shadow: 0 10px 30px var(--thumb-color-hover);
+  }
+}
+
 
 .pricing-card__price-wrapper {
   display: flex;

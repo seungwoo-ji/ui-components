@@ -134,6 +134,7 @@ input[type='range'] {
   --thumb-color: var(--strong-cyan);
   --thumb-size: 3em;
   --thumb-color-hover: hsl(174, 86%, 36%);
+  --progress: 50;
 
   appearance: none;
   background: transparent;
@@ -141,13 +142,15 @@ input[type='range'] {
   width: 80%;
 
   &::-webkit-slider-runnable-track {
-    background-color: var(--bar-color);
+    background-color: var(--light-grayish-blue-for-bar);
+    background-image: linear-gradient(to right, var(--bar-color) calc(var(--progress) * 1%), transparent 0);
     height: var(--bar-size);
     border-radius: 100vmax;
   }
 
   &::-moz-range-track {
-    background-color: var(--bar-color);
+    background-color: var(--light-grayish-blue-for-bar);
+    background-image: linear-gradient(to right, var(--bar-color) calc(var(--progress) * 1%), transparent 0);
     height: var(--bar-size);
     border-radius: 100vmax;
   }

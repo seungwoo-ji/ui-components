@@ -13,9 +13,11 @@ class App {
   #pageViewEl = document.querySelector('.pricing-card__views');
   #rangeInputEl = document.querySelector("input[type='range']");
   #priceEl = document.querySelector('.pricing-card__price');
+  #toggleEl = document.querySelector('.toggle__input');
 
   init() {
     this.#rangeInputEl.addEventListener('input', this.#updateProgressBar);
+    this.#toggleEl.addEventListener('change', this.#updatePrice);
   }
 
   #updateProgressBar = () => {
@@ -32,9 +34,15 @@ class App {
   };
 
   #updatePrice = () => {
-    this.#priceEl.textContent = `$${priceByPageViews[
-      this.#rangeInputEl.value - 1
-    ].pricePerMonth.toFixed(2)}`;
+    const isPaidYearly = this.#toggleEl.checked;
+
+    let price = priceByPageViews[this.#rangeInputEl.value - 1].pricePerMonth;
+
+    if (isPaidYearly) {
+      price -= price * 0.25;
+    }
+
+    this.#priceEl.textContent = `$${price.toFixed(2)}`;
   };
 }
 

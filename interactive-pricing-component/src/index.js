@@ -1,5 +1,13 @@
 import './style.css';
 
+const priceByPageViews = [
+  { views: '10k', pricePerMonth: 8 },
+  { views: '50k', pricePerMonth: 12 },
+  { views: '100k', pricePerMonth: 16 },
+  { views: '500k', pricePerMonth: 24 },
+  { views: '1m', pricePerMonth: 36 },
+];
+
 class App {
   // HTML elements
   rangeInputEl = document.querySelector("input[type='range']");

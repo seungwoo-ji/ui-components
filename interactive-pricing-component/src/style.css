@@ -283,11 +283,15 @@ input[type='range'] {
   }
 
   &:checked + .toggle__display {
-  background: var(--strong-cyan);
+    background: var(--strong-cyan);
   }
 
   &:checked + .toggle__display::before {
-  transform: translateX(70%);
+    transform: translateX(70%);
+  }
+
+  &:hover + .toggle__display {
+    box-shadow: var(--strong-cyan) 0 0 5px 3px;
   }
 }
 

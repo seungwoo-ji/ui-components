@@ -10,16 +10,32 @@ const priceByPageViews = [
 
 class App {
   // HTML elements
-  rangeInputEl = document.querySelector("input[type='range']");
+  #pageViewEl = document.querySelector('.pricing-card__views');
+  #rangeInputEl = document.querySelector("input[type='range']");
+  #priceEl = document.querySelector('.pricing-card__price');
 
   init() {
-    this.rangeInputEl.addEventListener('input', this.#updateProgressBar);
+    this.#rangeInputEl.addEventListener('input', this.#updateProgressBar);
   }
 
-  #updateProgressBar(event) {
-    const percentage = (event.target.value - 1) * 25;
-    event.target.style.setProperty('--progress', percentage);
-  }
+  #updateProgressBar = () => {
+    const percentage = (this.#rangeInputEl.value - 1) * 25;
+    this.#rangeInputEl.style.setProperty('--progress', percentage);
+    this.#updatePageViews();
+    this.#updatePrice();
+  };
+
+  #updatePageViews = () => {
+    this.#pageViewEl.textContent = `${
+      priceByPageViews[this.#rangeInputEl.value - 1].views
+    } pageviews`;
+  };
+
+  #updatePrice = () => {
+    this.#priceEl.textContent = `$${priceByPageViews[
+      this.#rangeInputEl.value - 1
+    ].pricePerMonth.toFixed(2)}`;
+  };
 }
 
 const app = new App();

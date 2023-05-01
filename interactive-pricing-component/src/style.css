@@ -164,7 +164,7 @@ input[type='range'] {
     width: var(--thumb-size);
     border-radius: 50%;
     box-shadow: 0 10px 30px var(--strong-cyan);
-    transition: all 250ms;
+    transition: 250ms;
   }
 
   &::-moz-range-thumb {
@@ -174,7 +174,7 @@ input[type='range'] {
     width: var(--thumb-size);
     border-radius: 50%;
     box-shadow: 0 10px 30px var(--strong-cyan);
-    transition: all 250ms;
+    transition: 250ms;
   }
 
   &:hover::-webkit-slider-thumb {

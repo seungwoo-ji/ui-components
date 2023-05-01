@@ -28,9 +28,12 @@ class App {
   };
 
   #updatePageViews = () => {
-    this.#pageViewEl.textContent = `${
+    const text = `${
       priceByPageViews[this.#rangeInputEl.value - 1].views
     } pageviews`;
+
+    this.#pageViewEl.textContent = text;
+    this.#rangeInputEl.setAttribute('aria-valuetext', text);
   };
 
   #updatePrice = () => {

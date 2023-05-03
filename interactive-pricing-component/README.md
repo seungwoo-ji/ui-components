@@ -31,8 +31,8 @@ npm run build # bundle the application using RollUp
 
 ## Links
 
-- Solution URL: [Solution URL]()
-- Live Site URL: [Live site URL]()
+- Solution URL: [Solution URL](https://github.com/seungwoo-ji/ui-components/tree/main/interactive-pricing-component)
+- Live Site URL: [Live site URL](https://legendary-moonbeam-e0ef00.netlify.app)
 
 ## Built with
 

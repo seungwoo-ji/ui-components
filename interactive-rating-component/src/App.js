@@ -1,7 +1,9 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+
+import Feedback from './components/Feedback';
+import theme from './components/theme';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
   *, *:before, *:after {
     box-sizing: border-box;
@@ -21,21 +23,22 @@ const GlobalStyle = createGlobalStyle`
   body {
     --bg-color: hsl(216, 12%, 8%);
 
+    font-family: 'Overpass', sans-serif;
     display: grid;
     place-items: center;
     min-height: 100vh;
     min-height: 100svh;
-    font-family: 'Overpass', sans-serif;
-    padding: 1.5em;
     background-color: var(--bg-color);
+    padding: 1.8em;
   }
 `;
 
 const App = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-    </>
+      <Feedback />
+    </ThemeProvider>
   );
 };
 

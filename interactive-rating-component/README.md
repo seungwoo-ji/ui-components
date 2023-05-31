@@ -31,8 +31,8 @@ npm run build # bundle the application using RollUp
 
 ## Links
 
-- Solution URL: [Solution URL]()
-- Live Site URL: [Live site URL]()
+- Solution URL: [Solution URL](https://github.com/seungwoo-ji/ui-components/tree/main/interactive-rating-component)
+- Live Site URL: [Live site URL](https://musical-sopapillas-b709fd.netlify.app/)
 
 ## Built with
 
